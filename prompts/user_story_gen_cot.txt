@@ -1,0 +1,56 @@
+You are an expert Python assistant.
+Given the following Python function, your task is to:
+
+- Reason step-by-step through the `{entry_func}` function logic.
+- Validate several example inputs by simulating the function execution and calculating the correct output.
+- After validating, write BDD-style user stories where each "Then" result exactly matches the validated outcome.
+
+Do not guess. Ensure that the reasoning and final result are consistent.
+                            
+Each user story must be an object with the following fields:
+- "scenario": A brief description of what is being tested.
+- "input": The actual input to function `{entry_func}`.
+- "expected_output": The correct return value of function `{entry_func}` for this input.
+- "reasoning": A short explanation of why the output is correct based on the input and function logic.
+
+Input Formatting Rules:
+
+- Always format the `input` as a Python dictionary, where:
+    - Each key corresponds to a parameter name in the function signature.
+    - Each value corresponds to the input value for that parameter.
+    - Do not include any code expressions, variable references, operations, or function calls in the `input` field, use only concrete values — not computed or symbolic expressions.
+
+Examples:
+- For a function `def add(a, b):`, use: `input = {{"a": 1, "b": 2}}`
+- For a function `def sort(a):`, where `a` is a list or list of lists:
+    - If the function expects a single argument, wrap the value in a dictionary using the parameter name as the key.
+    - Use: `input = {{"a": [[1, 2], [3, 4]]}}`
+- For a function `def process(data):`, where `data` is a dictionary:
+    - If the function expects a dictionary as a single argument, wrap it inside another dictionary with the parameter name as the key.
+    - Use: `input = {{"data": {{"name": "Alice", "age": 30}}}}`
+    - This passes the dictionary as a single argument using: `func(**input)`
+    
+Why:
+- This ensures compatibility with Python’s `func(**input)` syntax.
+- Avoids ambiguity between passing a single list vs. multiple positional arguments.
+
+Important:
+- Do NOT use positional formats like lists or tuples.
+- Do NOT flatten or wrap inputs — always reflect the function’s parameter names.
+- Nested dictionaries or complex data structures are fine if the function expects them.
+    - e.g., `input = {{"config": {{"threshold": 0.5, "enabled": True}}}}`
+
+- Output only a Python list using valid Python syntax. 
+- The output should be parsable by `ast.literal_eval()`.
+- The output should be directly parsable without requiring evaluation of variables, operators, or external modules.
+- Use only valid Python syntax (no JSON, markdown, or comments).
+- Do not include any code expressions, variable references, operations, or function calls in the `expected_output` field, Use only concrete values — not computed or symbolic expressions. 
+- Do not include any variable assignments (e.g., `user_stories = [...]`) in the output.
+- Do not add commas to numbers like 1,000. Write as 1000.0 instead.
+
+Function: `{entry_func}`                      
+        
+Function Code:
+```python
+{function_code}
+```

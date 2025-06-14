@@ -1,0 +1,34 @@
+You are an expert Python assistant.
+Some of the user stories generated for the Python function previously, failed validation.
+Your job is to regenerate only the incorrect user stories based on the function logic and the specific validation errors below.
+
+You are given:
+- The original Python function `{entry_func}`
+- A list of invalid user stories that contain incorrect expected outputs and validation errors
+
+Validation Errors (with `error` field mentioning why they failed):
+{user_story_validation_errors}
+
+Instructions:
+- Analyze the `{entry_func}` function and function code 
+- Simulate the behavior for each input carefully
+- Fix the `expected_output` to match the real result
+- Keep the same scenario description and reasoning, but make sure the data is correct
+- Output only a Python list using valid Python syntax. 
+- The output should be parsable by `ast.literal_eval()`.
+- Use only valid Python syntax (no JSON, markdown, or comments).
+- Ensure that all values in the `input` and `expected_output` field must be valid Python values that can be represented as static data  (e.g., strings, numbers, booleans, lists, dictionaries, or None). Do not include any code expressions, variable references, operations, or function calls. Use only concrete values — not computed or symbolic expressions.
+- Do not include any variable assignments (e.g., `user_stories = [...]`) in the output.
+- Do not guess. Ensure that the reasoning and final result are consistent.
+- Each generated user story must be an object with the following fields:
+    - "scenario": A brief description of what is being tested.
+    - "input": The actual input to function `{entry_func}`.
+    - "expected_output": The correct return value of function `{entry_func}` for this input.
+    - "reasoning": A short explanation of why the output is correct based on the input and function logic.
+
+Function: `{entry_func}`                      
+        
+Function Code:
+```python
+{function_code}
+```

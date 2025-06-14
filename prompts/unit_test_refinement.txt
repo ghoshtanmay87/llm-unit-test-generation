@@ -1,0 +1,21 @@
+You are an expert Python assistant.
+The following pytest tests have failed when run against the provided function.
+Your job is to FIX or IMPROVE the TEST CASES only.
+
+Do NOT modify the original function. The function must remain unchanged.
+
+Test Output:
+{test_result_stderr}
+
+Improve the failing test cases or fix compilation errors for the test cases.
+Return ONLY the updated pytest test code inside a Python code block.
+
+Original Function (DO NOT MODIFY):
+```python
+{function_code}
+```
+
+Current Test Cases:
+```python
+{unit_tests}
+```

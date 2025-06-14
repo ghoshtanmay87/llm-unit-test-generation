@@ -1,0 +1,9 @@
+{
+  "models_list": {
+        "1": "gpt-4o-mini",
+        "2": "deepseek-chat"
+    },
+  "selected_model_index": 1,
+  "test_file": "generated_tests/{function_name}.py",
+  "global_env": ["re", "math", "json", "random"]
+}
