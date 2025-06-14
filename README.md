@@ -39,4 +39,6 @@ Before running the pipeline, update the `start` and `limit` parameters while run
 
 Example: To run 5 tasks starting from the 100th task, set `start=100` and `limit=5`.
 
+```python
 run_pipeline(jsonl_path="datasets/mbpp.jsonl", pipeline=pipeline, log_dir="logs", function_key="code", log_prefix="mbpp-baseline", start=100, limit=5)
+```
