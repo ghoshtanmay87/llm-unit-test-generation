@@ -5,5 +5,7 @@
     },
   "selected_model_index": 1,
   "test_file": "generated_tests/{function_name}.py",
+  "open_ai_api_key": "",
+  "deepseek_api_key": "",
   "global_env": ["re", "math", "json", "random"]
 }
