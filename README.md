@@ -4,7 +4,7 @@
 
 ---
 
-## Setup
+## Setup (Mac)
 
 1. **Install dependencies**  
    ```bash
