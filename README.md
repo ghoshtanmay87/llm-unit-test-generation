@@ -2,6 +2,12 @@
 
  A modular, retry aware, optional feedback enabled unit test generation pipeline using Large Language Models (LLMs). It implements a modular architecture with LangGraph, enabling structured user story generation, user story validation, user story regeneration, unit test test synthesis, test execution, refinement and coverage analysis.
 
+# Background
+
+This project is based on this published paper: Retry and Refine: A Multi-agent Framework for LLM Based Reliable Unit Test Generation
+
+https://link.springer.com/chapter/10.1007/978-3-032-11402-0_7
+
 ---
 
 ## Setup (Mac)
